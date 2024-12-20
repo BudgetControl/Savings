@@ -13,7 +13,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class SavingController extends Controller
 {
-    protected int $workspaceId;
+    protected int|string $workspaceId;
 
     public function get(Request $request, Response $response, $argv): Response
     {
@@ -116,10 +116,6 @@ class SavingController extends Controller
 
         if ($request instanceof Request) {
             $request = $request->getParsedBody();
-        }
-
-        if ($request['amount'] < 0) {
-            throw new ValidationException('Amount must be greater than or equal to 0');
         }
 
         Validator::make($request, [

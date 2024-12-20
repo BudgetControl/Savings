@@ -8,7 +8,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class Controller {
 
-    protected int $workspaceId;
+    protected int|string $workspaceId;
 
     public function monitor(Request $request, Response $response)
     {

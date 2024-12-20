@@ -23,6 +23,14 @@ $capsule->addConnection($connections[$dbConnection]);
 $capsule->bootEloquent();
 $capsule->setAsGlobal();
 
+// validator laravel
+$validator = new \Illuminate\Validation\Factory(
+    new \Illuminate\Translation\Translator(
+        new \Illuminate\Translation\ArrayLoader(),
+        'en'
+    ),
+);
+
 // Set up the logger
 require_once __DIR__ . '/../config/logger.php';
 
@@ -30,4 +38,5 @@ require_once __DIR__ . '/../config/logger.php';
 Facade::setFacadeApplication([
     'log' => $logger,
     'date' => new Date(),
+    'validator' => $validator,
 ]);
