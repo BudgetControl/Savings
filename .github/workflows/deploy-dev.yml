@@ -3,7 +3,7 @@ name: Deploy Wallet application
 on:
   workflow_dispatch:
   push:
-    branches: [ "branchname" ]
+    branches: [ "develop" ]
 
 permissions:
   contents: read
