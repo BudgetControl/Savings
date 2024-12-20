@@ -35,5 +35,5 @@ jobs:
             username: ${{ secrets.SFTP_USER }}
             password: ${{ secrets.SFTP_PASSWORD }}
             port:  ${{ secrets.SFTP_PORT }}
-            script: docker exec budgetcontrol-ms-name composer install
+            script: docker exec budgetcontrol-ms-savings composer install
   
